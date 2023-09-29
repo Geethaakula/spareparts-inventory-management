@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Item</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+  
+<body>
+  {% csrf_token %} 
+  
+  <div class="d-flex flex-column  p-4 m-5">
+    <h3 class="h3 mb-4 align-self-center ">Create New Product</h3>
+    <form class="w-100" method="post" action="/new/">
+        {% csrf_token %} 
+      <div class="mb-3">
+        Name:<input class="form-control" type="text" placeholder="Name of the product" name="name">
+      </div>
+      <div class="mb-3"> 
+        Manufacturer:<input class="form-control" type="text" placeholder="Manufacturer name"  name="Manufacturer">
+      </div> 
+      <div class="mb-3">
+        Weight
+        <input type="number" class="form-control"  name="Weight" placeholder="Enter the Weight">
+      </div>
+      <div class="mb-3">
+        Cost
+        <input type="number" class="form-control" name="cost" placeholder="Enter the Cost">
+      </div>
+        <div class="mb-3">
+        Image:
+        <input type="text" class="form-control" id="image" placeholder="Enter the URL ">
+        </div>
+        <div class="d-flex mb-3 mt-4">
+          <input class="btn btn-success" type="Submit">
+          <div class="col-12">
+            <a href='/' class="btn btn-primary"> Back </a>
+          </div>
+        </div>
+      </form>
+      {% if message %}
+      <div class="alert alert-secondary" role="alert">
+        {{message}}
+      </div>
+      {% endif %}
+  </div>
+
+
+  
+  </body>
+
+</html>
+

@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>index</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="d-flex flex-column p-4 m-5">
+      <h3 class="h3 mb-4 align-self-center ">Car Spare Parts</h3>
+      <div class="d-flex flex-column align-items-center border border-1 rounded">
+          {% for i in stuff %}
+          <a class="p-2" href="/item?name={{i.name}}">
+            
+            {{i.name}}</a
+          >
+
+          {% endfor %}
+      </div>
+      <div class="mt-4 ml-auto">
+        <a href="/new" class="btn btn-primary">New Item </a>
+      </div>
+    </div>
+  </body>
+</html>

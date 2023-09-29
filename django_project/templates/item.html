@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Item</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="d-flex flex-column align-items-center ">
+    <h1>Details of the Product </h1>
+      {% for i in stuff%} 
+      {% if i.name == name %}
+
+    <ul class="list-group">
+      <li class="list-group-item">Name : {{i.name}}</li>
+      <li class="list-group-item">Manufacturer: {{i.manufacturer}}</li>
+      <li class="list-group-item">Weight: {{i.weight}}</li>
+      <li class="list-group-item">Cost: {{i.cost}}</li>
+    </ul>
+    
+      <img src="{{i.image}}"/>
+      {%endif%} 
+      {% endfor %}
+
+    <div class="col-12">
+      <a href="/" class="btn btn-success" >Back </a>
+    </div>
+  </div>
+</body>
+
+</html>
