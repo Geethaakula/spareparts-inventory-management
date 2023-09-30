@@ -13,19 +13,15 @@
 <body>
   <div class="d-flex flex-column align-items-center ">
     <h1>Details of the Product </h1>
-      {% for i in stuff%} 
-      {% if i.name == name %}
-
+    <!-- TODO: Add Bootstrap Input fields for displaying item details -->
     <ul class="list-group">
-      <li class="list-group-item">Name : {{i.name}}</li>
-      <li class="list-group-item">Manufacturer: {{i.manufacturer}}</li>
-      <li class="list-group-item">Weight: {{i.weight}}</li>
-      <li class="list-group-item">Cost: {{i.cost}}</li>
+      <li class="list-group-item">Name : {{item.name}}</li>
+      <li class="list-group-item">Manufacturer: {{item.manufacturer}}</li>
+      <li class="list-group-item">Weight: {{item.weight}}</li>
+      <li class="list-group-item">Cost: {{item.cost}}</li>
     </ul>
     
-      <img src="{{i.image}}"/>
-      {%endif%} 
-      {% endfor %}
+      <img src="{{item.image}}"/>
 
     <div class="col-12">
       <a href="/" class="btn btn-success" >Back </a>

@@ -21,11 +21,11 @@
         Name:<input class="form-control" type="text" placeholder="Name of the product" name="name">
       </div>
       <div class="mb-3"> 
-        Manufacturer:<input class="form-control" type="text" placeholder="Manufacturer name"  name="Manufacturer">
+        Manufacturer:<input class="form-control" type="text" placeholder="Manufacturer name"  name="manufacturer">
       </div> 
       <div class="mb-3">
         Weight
-        <input type="number" class="form-control"  name="Weight" placeholder="Enter the Weight">
+        <input type="number" class="form-control"  name="weight" placeholder="Enter the Weight (in lbs)">
       </div>
       <div class="mb-3">
         Cost
@@ -33,7 +33,7 @@
       </div>
         <div class="mb-3">
         Image:
-        <input type="text" class="form-control" id="image" placeholder="Enter the URL ">
+        <input type="text" class="form-control" id="image" name="image" placeholder="Enter the URL ">
         </div>
         <div class="d-flex mb-3 mt-4">
           <input class="btn btn-success" type="Submit">
@@ -42,9 +42,9 @@
           </div>
         </div>
       </form>
-      {% if message %}
-      <div class="alert alert-secondary" role="alert">
-        {{message}}
+      {% if message.type and message.message %}
+      <div class="alert alert-{{message.type}}" role="alert">
+        {{message.message}}
       </div>
       {% endif %}
   </div>
