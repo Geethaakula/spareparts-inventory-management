@@ -18,8 +18,8 @@ class item(View):
         name = kwargs["name"]
         #retrieve objects from model
         item = list(Stuff.objects.filter(name=name).values())
-        print(item)
-        return render(request,"item.html", context = {"item":item[0]})
+        
+        return render(request,"item.html", context = {"item":item[0] if len(item) > 0 else {"name":"N/A","manufacturer":"N/A","weight":"N/A","cost":"N/A"}})
          
         
 class new(View):
